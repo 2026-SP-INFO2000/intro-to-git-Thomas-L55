@@ -6,13 +6,13 @@ class BankAccount:
         if amount > 0:
             self.balance += amount
         else:
-            print("Deposit amount must be positive.")
+            raise ValueError("Deposit amount must be positive.")
 
     def withdraw(self, amount):
         if amount > 0 and amount <= self.balance:
             self.balance -= amount
         else:
-            print("Invalid withdraw amount.")
+            raise ValueError("Invalid withdraw amount.")
 
     def check_balance(self):
         return self.balance
@@ -30,13 +30,13 @@ class SavingsAccount:
         if amount > 0:
             self.balance += amount
         else:
-            print("Amount must be positive.")
+            raise ValueError("Amount must be positive.")
 
     def withdraw(self, amount):
         if amount > 0 and amount <= self.balance:
             self.balance -= amount
         else:
-            print("Invalid withdraw amount.")
+            raise ValueError("Invalid withdraw amount.")
 
     def check_balance(self):
         return self.balance
@@ -46,6 +46,3 @@ class SavingsAccount:
 
     def __str__(self):
         return f"This savings account has a balance of ${self.balance} and an interest rate of {self.interest_rate*100}%"
-    
-      
-        
